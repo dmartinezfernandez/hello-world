@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+  <style>
+
+    body {
+      font-family: 'Open Sans';
+    }
+
+    h1 {
+      font-weight: 300;
+    font-style: normal;    }
+
+    a {
+      color: #00A3E0;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul.emdash {
+      list-style-type: none;
+      list-style-position: inside;
+      text-indent: -1.25em;
+    }
+    ul.emdash > li:before {
+      content: "\2014\00A0"; /* em dash + space*/
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+  <script>
+    var app = angular.module("app", []);
+    app.controller("ctrl", function($scope) {
+      $scope.bookmarks = [
+        ["Github", "https://github.com"],
+        ["Google", "http://www.google.com"],
+		    ["Microsoft Developer", "https://developer.microsoft.com/"],
+        ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mollis odio orci, et pellentesque ipsum condimentum in. Cras sit amet mauris a urna mollis scelerisque. Curabitur id commodo turpis. Suspendisse porttitor risus eu ligula mollis, ut elementum tellus consequat. Praesent hendrerit ipsum iaculis arcu tempor, a dapibus nulla aliquet. Mauris vel aliquam mauris, in blandit risus. Etiam varius lacus in arcu convallis condimentum. Aliquam erat volutpat. Fusce velit metus, mollis vel nulla eget, volutpat pellentesque sem. Vivamus lorem eros, posuere quis pulvinar eget, convallis ac nisl.", ""]
+      ]
+    });
+  </script>
+</head>
+<body ng-app="app" ng-controller="ctrl">
+  <h1>Bookmarks</h1>
+  <p>
+    Em dash style list:
+  </p>
+  <ul class="emdash">
+    <li ng-repeat="item in bookmarks"><a href='{{item[1]}}'>{{item[0]}}</a></li>
+  </ul>
+  <p>Default bullet style list:</p>
+  <ul>
+    <li ng-repeat="item in bookmarks"><a href='{{item[1]}}'>{{item[0]}}</a></li>
+  </ul>
+</body>
+</html>
