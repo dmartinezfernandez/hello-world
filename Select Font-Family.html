@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans|Roboto|Roboto+Mono|Source+Sans+Pro|Source+Code+Pro|Inconsolata|Open+Sans|Cousine|Fira+Mono|Fira+Sans&display=swap');
+
+        /** Regular */
+        @font-face {
+            font-family: "SF Text";
+            font-weight: 400;
+            src: url("https://sf.abarba.me/SF-UI-Text-Regular.otf");
+        }
+        /** Regular */
+        @font-face {
+            font-family: "SF Mono";
+            font-weight: 400;
+            src: url("https://sf.abarba.me/SFMono-Regular.otf");
+        }
+    </style>
+    <script>
+        function changeFontFamily(selector, htmlTag) {
+            if (selector.selectedIndex >= 0) {
+                var selected = selector.options[selector.selectedIndex].value;
+                console.log("changeFontFamily(" + selected + ", " + htmlTag + ")");
+                var tags = document.getElementsByTagName(htmlTag);
+                for (var i = 0; i < tags.length; i++) {
+                    tags[i].style.fontFamily = selected;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Hello World!</p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <pre>function quickSort(items, left, right) {
+        var index;
+        if (items.length > 1) {
+            index = partition(items, left, right); //index returned from partition
+            if (left < index - 1) { //more elements on the left side of the pivot
+                quickSort(items, left, index - 1);
+            }
+            if (index < right) { //more elements on the right side of the pivot
+                quickSort(items, index, right);
+            }
+        }
+        return items;
+    }
+    // first call to quick sort
+    var result = quickSort(items, 0, items.length - 1);
+    /* ABCČĆDĐEFGHIJKLMNOPQRSŠTUVWXYZŽabcčćdđefghijklmnopqrsštuvwxyzž
+       АБВГҐДЂЕЁЄЖЗЅИІЇЙЈКЛЉМНЊОПРСТЋУЎФХЦЧЏШЩЪЫЬЭЮЯабвгґдђеёєжзѕиіїй
+       јклљмнњопрстћуўфхцчџшщъыьэюяΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικ
+       λμνξοπρστυφχψωάΆέΈέΉίϊΐΊόΌύΰϋΎΫΏĂÂÊÔƠƯăâêôơư
+       1234567890‘?’“!”(%)[#]{@}/&\&lt;-+÷×=>®©$€£¥¢:;,.*
+    */
+    </pre>
+    <hr>
+    Text:
+    <select onchange="changeFontFamily(this, 'body');">
+        <option></option>
+        <option>Fira Sans</option>
+        <option>IBM Plex Sans</option>
+        <option>Open Sans</option>
+        <option>Roboto</option>
+        <option>SF Text</option>
+        <option>Source Sans Pro</option>
+        <option>Segoe UI</option>
+        <option value="system-ui">system-ui = Segoe UI</option>
+        <option>Times New Roman</option>
+    </select>
+    Code:
+    <select onchange="changeFontFamily(this, 'pre');">
+        <option></option>
+        <option>Consolas</option>
+        <option>Cousine</option>
+        <option>Fira Mono</option>
+        <option>IBM Plex Mono</option>
+        <option>Inconsolata</option>
+        <option value="monospace">monospace = Consolas 12px</option>
+        <option>SF Mono</option>
+        <option>Source Code Pro</option>
+        <option>Roboto Mono</option>
+    </select>
+</body>
+</html>
