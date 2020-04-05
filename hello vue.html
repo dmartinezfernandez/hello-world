@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejemplo de "Hola Mundo" desarrollado en Vue</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <style>
+            html, input {
+                font-family: system-ui;
+                background-color: #13171a /* Cool Gray 100 */;
+                color: #b9bfc7 /* Cool Gray 30 */;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <div id="app">
+            <p>Hello {{ name && name.length > 0 ? name : 'World' }}!</p>
+            <input v-model="name">
+        </div>
+        
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    name: undefined
+                }
+            });
+        </script>
+    </body>
+</html>
