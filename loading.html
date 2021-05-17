@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <style>
+        body {
+            font-family: system-ui;
+        }
+
+        .intermittent {
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-timing-function: steps(1, end);
+            animation-delay: 1s;
+        }
+
+        @keyframes dot1 {
+            from {
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes dot2 {
+            from {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes dot3 {
+            from {
+                opacity: 0;
+            }
+
+            75% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p>Loading<span class="intermittent" style="animation-name: dot1">.</span><span class="intermittent"
+            style="animation-name: dot2">.</span><span class="intermittent" style="animation-name: dot3">.</span>
+    </p>
+</body>
+
+</html>
